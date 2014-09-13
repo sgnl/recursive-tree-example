@@ -2,7 +2,7 @@
 
 'use strict';
 // a tree to be climbed.
-module.export = {
+module.exports = {
   root: {
     name: "Bjorn",
     has_parent: null,
@@ -16,7 +16,7 @@ module.export = {
         children: [
           {
             {
-              name: "Spencer",
+              name: "Spencer Toyama",
               has_parent: false,
               is_leaf: true,
               has_children: false,
@@ -236,7 +236,7 @@ module.export = {
         ]
       },
       {
-        name: "The Penguin",
+        name: "Victor Von Doom",
         has_parent:true,
         is_leaf: true,
         has_children: false,
@@ -244,7 +244,8 @@ module.export = {
       }
     ]
   }
-}
+};
+
 // Still beneath the snow,
 // The bonsai'd elm makes spring plans:
 // "Leaves, I think, this year."
