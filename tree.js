@@ -246,6 +246,26 @@ module.exports = {
   }
 };
 
-// Still beneath the snow,
-// The bonsai'd elm makes spring plans:
-// "Leaves, I think, this year."
+
+/*
+         ,.,
+        MMMM_    ,..,
+          "_ "__"MMMMM          ,...,,
+   ,..., __." --"    ,.,     _-"MMMMMMM
+  MMMMMM"___ "_._   MMM"_."" _ """"""
+   """""    "" , \_.   "_. ."
+          ,., _"__ \__./ ."
+         MMMMM_"  "_    ./
+          ''''      (    )
+   ._______________.-'____"---._.
+    \                          /
+     \________________________/
+     (_)                    (_)
+
+    leaves yellow and red
+float downward toward the earth
+      rest in my bonsai
+
+
+*/
+
