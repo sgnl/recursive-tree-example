@@ -265,7 +265,5 @@ module.exports = {
     leaves yellow and red
 float downward toward the earth
       rest in my bonsai
-
-
 */
 
