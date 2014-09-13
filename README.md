@@ -7,10 +7,10 @@ This tree is in `JSON` format.
 
 ````
 {
-  name: String,     // have a String with a name value, e.g. "Russel"
-  has_parent: null, // can be of True, False, or Null values.
+  name: String,       // have a String with a name value, e.g. "Russel"
+  has_parent: null,   // can be of True, False, or Null values.
   has_children: true, // Boolean, if True then the children property Array will be populated
-  children: []    // An Array of Objects that look like this Object.
+  children: []        // An Array of Objects that look like this Object.
 }
     
 ````
