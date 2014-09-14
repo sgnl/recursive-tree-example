@@ -3,6 +3,21 @@ var expect = chai.expect;
 var tree = require('../tree');
 var Traverse = require('../traverse');
 
+describe('Validation', function(){
+  describe('Traversal Object', function () {
+    var traverse = new Traverse(tree);
+
+    it('should be an instance of itself', function () {
+      expect(traverse).to.be.an.instanceOf(Traverse);
+    });
+
+    it('should take a data structure and set it as a property on itself', function () {
+      expect(traverse.tree).to.not.be.undefined;
+      expect(traverse.tree).to.be.a('object');
+    });
+  });
+});
+
 describe('Traversing a Tree', function(){
   describe('Methods should exist', function(){
     var traverse = new Traverse(tree);
