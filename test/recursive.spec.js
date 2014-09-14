@@ -173,7 +173,7 @@ describe('Traversing a Tree', function () {
   });
 
   describe('Method findName', function () {
-    var result = traverse.findName('Nikola Tesla');
+    var person = traverse.findName('Nikola Tesla');
 
     it('should find Nikola Tesla', function () {
       expect(person).to.be.an('object');
