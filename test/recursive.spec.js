@@ -149,6 +149,29 @@ describe('Traversing a Tree', function () {
     });
   }); // ends findAllParentsNames describe
 
+  describe('Method findAllParentsAges', function () {
+    var results = traverse.findAllParentsAges();
+
+    it('should be an array of numbers', function () {
+      expect(results).to.be.an('array');
+      expect(results).to.satisfy(containStrings);
+    });
+
+    it('should not include leaf ages', function () {
+      var leafAges = traverse.getLeafAges();
+      var result = traverse.findAllParentsAges();
+
+      expect(results).to.not.include.members(leafAges);
+    });
+
+    it('should contain some of these names', function () {
+      var someParentAges = ['Bjorn', 'Kingtak', 'Michelle', 'Stevie', 'Jayson', 'Mark', 'Charles'];
+
+      expect(results).to.include.members(someParentAges);
+    });
+    
+  });
+
   describe('Method findName', function () {
     var result = traverse.findName('Nikola Tesla');
 
