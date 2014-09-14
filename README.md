@@ -2,13 +2,13 @@
 Build a Class with methods that can traverse a tree. Each method should return a different collections of data from the data tree.
 
 ###Methods:
-1. `getAllNames` returns an Array with all of the values of the Name property for each and every node.
-2. `getAllAges` returns an Array with all of the values of the Age property for each and every node.
+1. `getAllNames` returns an Array with all of the values of the Name property for each and every node. e.g. `["Tom", "Dick", "Harry"]`
+2. `getAllAges` returns an Array with all of the values of the Age property for each and every node. e.g. `[9, 8, 7, 6]`
 3. `getLeafNames` returns an Array with only the values of the Name property from nodes that are leafs. *A leaf node is an object with no children nodes.*
 4. `getLeafAges` returns an Array with only the values of the Age property from nodes that are leafs.
 5. `findAllParentsNames` returns an array of names that belong to all non-leaf nodes.
 6. `findAllParentsAge` returns an array of ages that belong to all non-leaf nodes.
-7. `findName(String)` finds a node by it's name property and returns that entire object.
+7. `findName(String)` finds a node by it's name property and returns that entire object. e.g. `{name: 'Roger Moore', has_parent: true, is_leaf: false, children: []}`
 
 This tree is in `JSON` format.
 
@@ -30,4 +30,8 @@ This tree is in `JSON` format.
 }
     
 ````
-
+# Get Started
+1. fork and clone this repo
+2. does forget to `npm install`
+3. run `gulp` to keep your tasks running
+4. make each test pass in order
