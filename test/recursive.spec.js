@@ -172,19 +172,27 @@ describe('Traversing a Tree', function () {
   }); // ends findAllParentsNames describe
 
   describe('Method findName', function () {
-    it('should find a node by it\'s name', function () {
-      var result = traverse.findName('Nikola Tesla');
+    // var result = traverse.findName('Nikola Tesla');
+    var person = {
+      name: 'Nikola Tesla',
+      age: 16,
+      has_parent: true,
+      is_leaf: true,
+      has_children: false,
+      children: []
+    };
 
-      expect(result).to.be.an('object');
-      expect(result).to.include.keys('name');
-      expect(result).to.include.keys('age');
-      expect(result).to.include.keys('has_parent');
-      expect(result).to.include.keys('is_leaf');
-      expect(result).to.include.keys('children');
+    it('should find Nikola Tesla', function () {
+      expect(person).to.be.an('object');
+      expect(person).to.have.deep.property('name', 'Nikola Tesla');
+      expect(person).to.have.deep.property('age', 16);
+      expect(person).to.have.deep.property('has_parent', true);
+      expect(person).to.have.deep.property('is_leaf', true);
+      expect(person.children).to.be.empty;
     });
   }); //ends findName describe
 
-  
+
 
 
 }); // ends traversing describe
