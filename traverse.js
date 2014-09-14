@@ -19,7 +19,7 @@ Traverse.prototype.getAllNames = function(currentNode, resultsArray){
   this.pushValue(node, 'name');
 
   if (node.has_children) {
-    followBranches.call(this, node.children);
+    followBranches.call(this, node.children, this.getAllNames);
   }
 
   return this.results;
@@ -33,13 +33,16 @@ Traverse.prototype.getAllAges = function(currentNode, resultsArray){
   this.pushValue(node, 'age');
 
   if (node.has_children) {
-    followBranches.call(this, node.children);
+    followBranches.call(this, node.children, this.getAllAges);
   }
 
   return this.results;
 };
 
-Traverse.prototype.getLeafNames = function(){};
+Traverse.prototype.getLeafNames = function(){
+
+};
+
 Traverse.prototype.getLeafAges = function(){};
 Traverse.prototype.findAllParentsNames = function(){};
 Traverse.prototype.findAllParentsAge = function(){};
@@ -58,9 +61,9 @@ var configNode = function(_tree, currentNode){
   }
 };
 
-function followBranches (branch) {
+function followBranches (branch, cb) {
   for (var i = 0; i < branch.length; i++) {
-    this.getAllNames(branch[i], this.results);
+    cb.call(this, branch[i], this.results);
   }
 }
 
