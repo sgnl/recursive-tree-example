@@ -106,7 +106,26 @@ Traverse.prototype.findAllParentsAges = function(currentNode, resultsArray){
   return this.results;
 };
 
-Traverse.prototype.findName = function(){};
+Traverse.prototype.findName = function(person, currentNode, resultsArray){
+  this.results = resultsArray || [];
+  var _tree = this.tree;
+  var node = initNode(_tree, currentNode);
+
+  console.log(node.name === person);
+
+  if (node.name === person) {
+    this.foundPerson = node;
+  }
+
+  if (node.has_children) {
+    for (var i = 0; i < node.children.length; i++) {
+      this.findName(person, node.children[i], this.results);
+    }
+  }
+
+  return this.foundPerson || "no person found";
+};
+
 Traverse.prototype.findAge = function(){};
 
 /******************
