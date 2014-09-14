@@ -9,7 +9,6 @@ Build a Class with methods that can traverse a tree. Each method should return a
 5. `findAllParentsNames` returns an array of names that belong to all non-leaf nodes.
 6. `findAllParentsAge` returns an array of ages that belong to all non-leaf nodes.
 7. `findName(String)` finds a node by it's name property and returns that entire object.
-8. `findAge(Number)` finds a node by it's age property and returns that entire object.
 
 This tree is in `JSON` format.
 
