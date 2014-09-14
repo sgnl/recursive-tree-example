@@ -5,16 +5,13 @@
 function Traverse(data){
   this.tree = data;
 };
+/* 
+ * build the methods via prototype
+ * the first one is free
+ * uncomment the code below, then remove this comment
+ */
 
-Traverse.prototype.getAllNames = function(){};
-Traverse.prototype.getAllAges = function(){};
-Traverse.prototype.getLeafNames = function(){};
-Traverse.prototype.getLeafAges = function(){};
-Traverse.prototype.findAllParentsNames = function(){};
-Traverse.prototype.findAllParentsAge = function(){};
-Traverse.prototype.findName = function(){};
-Traverse.prototype.findAge = function(){};
+// Traverse.prototype.getAllNames = function(){};
 
-
-
+/* exports the Class Traverse */
 module.exports = Traverse;

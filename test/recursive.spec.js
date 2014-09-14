@@ -39,8 +39,7 @@ describe('Traversing a Tree', function () {
   });// ends methods exists describe
 
   describe('Method getAllNames', function () {
-    // var results = traverse.getAllNames();
-    var results = ['brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'Nikola Tesla', 'brah', 'brah', 'brah', 'brah', 'Kingtak', 'Eylem', 'Douglas Crockford', 'Jayson'];
+    var results = traverse.getAllNames();
 
     it('should return an array of strings', function () {
       expect(results).to.be.an('array');
@@ -57,8 +56,7 @@ describe('Traversing a Tree', function () {
   }); // ends method getAllNames describe
 
   describe('Method getAllAges', function () {
-    // var results = traverse.getAllAges();
-    var results = [1, 2, 3, 22, 5, 6, 7, 8, 9, 0, 1, 88, 3, 4, 5, 6, 7, 8, 9, 0, 500, 2, 3, 4, 5, 66, 7, 8, 9, 0, 1, 1337];
+    var results = traverse.getAllAges();
 
     it('should return an array of numbers', function () {
       expect(results).to.be.an('array');
@@ -75,25 +73,7 @@ describe('Traversing a Tree', function () {
   });
 
   describe('Method getLeafNames', function () {
-    // var results = traverse.getLeafNames();
-    var results = [
-      'Spencer Toyama',
-      'Edgar Allan Poe',
-      'Albert Einstein',
-      'Nikola Tesla',
-      'Garfield The Cat',
-      'Milton S. Hershey',
-      'Gene Shoemaker',
-      'Neil deGrasse Tyson',
-      'Carl Sagan',
-      'Marty McFly',
-      'Bill Nye',
-      'Ann Druyan',
-      'Jon Stewart',
-      'Aaron Turner',
-      'Douglas Crockford',
-      'Victor Von Doom'
-    ];
+    var results = traverse.getLeafNames();
 
     var sixteen_names = [
       'Spencer Toyama',
@@ -130,8 +110,7 @@ describe('Traversing a Tree', function () {
   }); //ends getLeafName describe
 
   describe('Method getLeafAges', function () {
-    // var results = traverse.getLeafAges();
-    var results = [28, 560, 91, 16, 783, 8008, 62, 65, 23, 43, 13, 914, 841, 33, 88, 500];
+    var results = traverse.getLeafAges();
 
     it('should be an array of numbers', function () {
       expect(results).to.be.an('array');
@@ -166,21 +145,13 @@ describe('Traversing a Tree', function () {
 
     it('should contain some of these names', function () {
       var someParentNames = ['Stevie', 'Mark', 'Charles', 'Cortney', 'Wray', 'Kingtak', 'Bjorn'];
-
+      
       expect(results).to.include.members(someParentNames);
     });
   }); // ends findAllParentsNames describe
 
   describe('Method findName', function () {
-    // var result = traverse.findName('Nikola Tesla');
-    var person = {
-      name: 'Nikola Tesla',
-      age: 16,
-      has_parent: true,
-      is_leaf: true,
-      has_children: false,
-      children: []
-    };
+    var result = traverse.findName('Nikola Tesla');
 
     it('should find Nikola Tesla', function () {
       expect(person).to.be.an('object');
