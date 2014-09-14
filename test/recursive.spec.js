@@ -26,7 +26,7 @@ describe('Traversing a Tree', function () {
       'getAllAges',
       'getLeafNames',
       'getLeafAges',
-      'findAllParentsName',
+      'findAllParentsNames',
       'findAllParentsAge',
       'findName',
       'findAge'
@@ -133,7 +133,7 @@ describe('Traversing a Tree', function () {
     // var results = traverse.getLeafAges();
     var results = [28, 560, 91, 16, 783, 8008, 62, 65, 23, 43, 13, 914, 841, 33, 88, 500];
 
-    it("should be an array of numbers", function () {
+    it('should be an array of numbers', function () {
       expect(results).to.be.a('array');
       expect(results).to.satisfy(containsNumbers);
     });
@@ -146,7 +146,29 @@ describe('Traversing a Tree', function () {
       var sixteen_ages = [28, 560, 91, 16, 783, 8008, 62, 65, 23, 43, 13, 914, 841, 33, 88, 500 ];
       expect(results).to.have.members(sixteen_ages);
     });
-  });
+  }); // ends getLeafAges describe
+
+  describe('The Method findAllParentsNames', function () {
+    var results = traverse.findAllParentsNames();
+
+    it('should be an array of strings', function () {
+      expect(results).to.be.a('array');
+      expect(results).to.satisfy(containsStrings);
+    });
+
+    it('should not include leaf names', function () {
+      var leafNames = traverse.getLeafNames();
+      var result = traverse.findAllParentsNames();
+
+      expect(results).to.not.include.members(leafNames);
+    });
+
+    it('should contain some of these names', function () {
+      var someParentNames = ['Stevie', 'Mark', 'Charles', 'Cortney', 'Wray', 'Kingtak', 'Bjorn'];
+
+      expect(results).to.include.members(someParentNames);
+    });
+  }); // ends findAllParentsNames describe
 
 
 }); // ends traversing describe
