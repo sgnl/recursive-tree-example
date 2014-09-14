@@ -27,7 +27,7 @@ describe('Traversing a Tree', function () {
       'getLeafNames',
       'getLeafAges',
       'findAllParentsNames',
-      'findAllParentsAge',
+      'findAllParentsAges',
       'findName',
       'findAge'
     ];
