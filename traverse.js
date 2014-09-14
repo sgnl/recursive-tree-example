@@ -1,16 +1,20 @@
 
 'use strict';
-var traverse = {};
+// var traverse = {};
 
-traverse.getAllNames = function(){};
-traverse.getAllAges = function(){};
-traverse.getLeafNames = function(){};
-traverse.getLeafAges = function(){};
-traverse.findAllParentsName = function(){};
-traverse.findAllParentsAge = function(){};
-traverse.findName = function(){};
-traverse.findAge = function(){};
+function Traverse(data){
+  this.tree = data;
+};
+
+Traverse.prototype.getAllNames = function(){};
+Traverse.prototype.getAllAges = function(){};
+Traverse.prototype.getLeafNames = function(){};
+Traverse.prototype.getLeafAges = function(){};
+Traverse.prototype.findAllParentsName = function(){};
+Traverse.prototype.findAllParentsAge = function(){};
+Traverse.prototype.findName = function(){};
+Traverse.prototype.findAge = function(){};
 
 
 
-module.exports = traverse;
+module.exports = Traverse;
