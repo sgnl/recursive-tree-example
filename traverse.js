@@ -14,7 +14,7 @@ function Traverse(data){
 Traverse.prototype.getAllNames = function(currentNode, resultsArray){
   this.results = resultsArray || [];
   var _tree = this.tree;
-  var node = configNode(_tree, currentNode);
+  var node = initNode(_tree, currentNode);
 
   this.pushValue(node, 'name');
 
@@ -28,7 +28,7 @@ Traverse.prototype.getAllNames = function(currentNode, resultsArray){
 Traverse.prototype.getAllAges = function(currentNode, resultsArray){
   this.results = resultsArray || [];
   var _tree = this.tree;
-  var node = configNode(_tree, currentNode);
+  var node = initNode(_tree, currentNode);
 
   this.pushValue(node, 'age');
 
@@ -39,11 +39,41 @@ Traverse.prototype.getAllAges = function(currentNode, resultsArray){
   return this.results;
 };
 
-Traverse.prototype.getLeafNames = function(){
+Traverse.prototype.getLeafNames = function(currentNode, resultsArray){
+  this.results = resultsArray || [];
+  var _tree = this.tree;
+  var node = initNode(_tree, currentNode);
+
+  // console.log(node.is_leaf);
+  if (node.is_leaf) {
+    this.pushValue(node, 'name'); 
+  }
+
+  if (node.has_children) {
+    followBranches.call(this, node.children, this.getLeafNames);
+  }
+
+  return this.results;
 
 };
 
-Traverse.prototype.getLeafAges = function(){};
+Traverse.prototype.getLeafAges = function(currentNode, resultsArray){
+  this.results = resultsArray || [];
+  var _tree = this.tree;
+  var node = initNode(_tree, currentNode);
+
+  // console.log(node.is_leaf);
+  if (node.is_leaf) {
+    this.pushValue(node, 'age'); 
+  }
+
+  if (node.has_children) {
+    followBranches.call(this, node.children, this.getLeafAges);
+  }
+
+  return this.results;
+};
+
 Traverse.prototype.findAllParentsNames = function(){};
 Traverse.prototype.findAllParentsAge = function(){};
 Traverse.prototype.findName = function(){};
@@ -53,7 +83,7 @@ Traverse.prototype.findAge = function(){};
  * Helper Methods *
  ******************/
 
-var configNode = function(_tree, currentNode){
+var initNode = function(_tree, currentNode){
   if (!currentNode) {
     return _tree.root;
   } else {
