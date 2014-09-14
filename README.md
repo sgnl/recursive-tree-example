@@ -6,7 +6,7 @@ Build a Class with methods that can traverse a tree. Each method should return a
 2. `getAllAges` returns an Array with all of the values of the Age property for each and every node.
 3. `getLeafNames` returns an Array with only the values of the Name property from nodes that are leafs. *A leaf node is an object with no children nodes.*
 4. `getLeafAges` returns an Array with only the values of the Age property from nodes that are leafs.
-5. `findAllParentsNames` returns and array of names that belong to all non-leaf nodes.
+5. `findAllParentsNames` returns an array of names that belong to all non-leaf nodes.
 6. `findAllParentsAge` returns an array of ages that belong to all non-leaf nodes.
 7. `findName(String)` finds a node by it's name property and returns that entire object.
 8. `findAge(Number)` finds a node by it's age property and returns that entire object.
