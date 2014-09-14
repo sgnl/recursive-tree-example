@@ -88,10 +88,24 @@ Traverse.prototype.findAllParentsNames = function(currentNode, resultsArray){
   }
 
   return this.results;
-
-
 };
-Traverse.prototype.findAllParentsAge = function(){};
+
+Traverse.prototype.findAllParentsAges = function(currentNode, resultsArray){
+  this.results = resultsArray || [];
+  var _tree = this.tree;
+  var node = initNode(_tree, currentNode);
+
+  if (!node.is_leaf) {
+    this.pushValue(node, 'age');
+  }
+
+  if (node.has_children) {
+    followBranches.call(this, node.children, this.findAllParentsAges);
+  }
+
+  return this.results;
+};
+
 Traverse.prototype.findName = function(){};
 Traverse.prototype.findAge = function(){};
 
