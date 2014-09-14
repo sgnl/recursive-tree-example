@@ -3,9 +3,10 @@ var expect = chai.expect;
 var tree = require('../tree');
 var Traverse = require('../traverse');
 
+var traverse = new Traverse(tree);
+
 describe('Validation', function(){
   describe('Traversal Object', function () {
-    var traverse = new Traverse(tree);
 
     it('should be an instance of itself', function () {
       expect(traverse).to.be.an.instanceOf(Traverse);
@@ -18,9 +19,8 @@ describe('Validation', function(){
   }); // ends traversal object describe
 }); // ends validation describe
 
-describe('Traversing a Tree', function(){
-  describe('Methods should exist', function(){
-    var traverse = new Traverse(tree);
+describe('Traversing a Tree', function () {
+  describe('Methods should exist', function () {
     var methodList = [
       'getAllNames',
       'getAllAges',
@@ -32,49 +32,70 @@ describe('Traversing a Tree', function(){
       'findAge'
     ];
 
-    for (var i = 0; i < methodList.length; i++){
+    for (var i = 0; i < methodList.length; i++) {
       checkMethodExistance(traverse, methodList[i]);
     }
+
   });// ends methods exists describe
 
-  describe('The Method getAllNames', function(){
-    var traverse = new Traverse(tree);
+  describe('The Method getAllNames', function () {
     // var results = traverse.getAllNames();
     var results = ['brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'Nikola Tesla', 'brah', 'brah', 'brah', 'brah', 'Kingtak', 'Eylem', 'Douglas Crockford', 'Jayson'];
 
-    it('should return an array of strings', function(){
+    it('should return an array of strings', function () {
       expect(results).to.be.a('array');
       expect(results).to.satisfy(containsStrings);
     });
+
     it('should be an array of thirty-two names', function () {
       expect(results).to.have.length(32);
     });
+
     it('should have all the names!', function () {
       expect(results).to.include.members(['Nikola Tesla', 'Kingtak', 'Eylem', 'Douglas Crockford', 'Jayson']);
     });
   }); // ends method getAllNames describe
 
   describe('The Method getAllAges', function () {
-    var traverse = new Traverse(tree);
     // var results = traverse.getAllAges();
     var results = [1, 2, 3, 22, 5, 6, 7, 8, 9, 0, 1, 88, 3, 4, 5, 6, 7, 8, 9, 0, 500, 2, 3, 4, 5, 66, 7, 8, 9, 0, 1, 1337];
 
-    it('should return an array of numbers', function(){
+    it('should return an array of numbers', function () {
       expect(results).to.be.a('array');
       expect(results).to.satisfy(containsNumbers);
     });
+
     it('should be an array of thirty-two names', function () {
       expect(results).to.have.length(32);
     });
+
     it('should have all the numbers!', function () {
       expect(results).to.include.members([66, 22, 88, 1337, 500]);
     });
   });
 
   describe('The Method getLeafNames', function () {
-    var traverse = new Traverse(tree);
     // var results = traverse.getLeafNames();
     var results = [
+      'Spencer Toyama',
+      'Edgar Allan Poe',
+      'Albert Einstein',
+      'Nikola Tesla',
+      'Garfield The Cat',
+      'Milton S. Hershey',
+      'Gene Shoemaker',
+      'Neil deGrasse Tyson',
+      'Carl Sagan',
+      'Marty McFly',
+      'Bill Nye',
+      'Ann Druyan',
+      'Jon Stewart',
+      'Aaron Turner',
+      'Douglas Crockford',
+      'Victor Von Doom'
+    ];
+
+    var sixteen_names = [
       'Spencer Toyama',
       'Edgar Allan Poe',
       'Albert Einstein',
@@ -97,14 +118,35 @@ describe('Traversing a Tree', function(){
         expect(results).to.be.a('array');
         expect(results).to.satisfy(containsStrings);
     });
-    it('should be an array of sixteen names', function () {
+
+    it('should be an array of sixteen string values', function () {
       expect(results).to.have.length(16);
     });
+
     it('should contains all the names!', function () {
-      expect(results)
+      expect(results).to.include.members(sixteen_names);
     });
     
   }); //ends getLeafName describe
+
+  describe('The Method getLeafAges', function () {
+    // var results = traverse.getLeafAges();
+    var results = [28, 560, 91, 16, 783, 8008, 62, 65, 23, 43, 13, 914, 841, 33, 88, 500];
+
+    it("should be an array of numbers", function () {
+      expect(results).to.be.a('array');
+      expect(results).to.satisfy(containsNumbers);
+    });
+
+    it('should be an array of sixteen values', function () {
+      expect(results).to.have.length(16);
+    });
+
+    it('should contain certain numbers', function () {
+      var sixteen_ages = [28, 560, 91, 16, 783, 8008, 62, 65, 23, 43, 13, 914, 841, 33, 88, 500 ];
+      expect(results).to.have.members(sixteen_ages);
+    });
+  });
 
 
 }); // ends traversing describe
@@ -116,18 +158,18 @@ describe('Traversing a Tree', function(){
 
 // check each method by it's name
 function checkMethodExistance(tree, methodName){
-  it(methodName + ' should be defined and be a Function', function(){
+  it(methodName + ' should be defined and be a Function', function () {
     expect(tree[methodName]).to.not.be.undefined;
     expect(tree[methodName]).to.a.instanceOf(Function);
   });
 }
 
 // used to the satisfy(cheezburger);
-function containsStrings(array){
+function containsStrings(array) {
   if (array.length === 0) {
     return false;
   }
-  for (var i = 0; i < array.length; i++){
+  for (var i = 0; i < array.length; i++) {
     if (typeof array[i] !== 'string') {
       return false;
     }
@@ -135,11 +177,11 @@ function containsStrings(array){
   return true;
 }
 
-function containsNumbers(array){
+function containsNumbers(array) {
   if (array.length === 0) {
     return false;
   }
-  for (var i = 0; i < array.length; i++){
+  for (var i = 0; i < array.length; i++) {
     if (typeof array[i] !== 'number') {
       return false;
     }
