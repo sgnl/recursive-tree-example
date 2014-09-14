@@ -14,7 +14,7 @@ describe('Validation', function(){
 
     it('should take a data structure and set it as a property on itself', function () {
       expect(traverse.tree).to.not.be.undefined;
-      expect(traverse.tree).to.be.a('object');
+      expect(traverse.tree).to.be.an('object');
     });
   }); // ends traversal object describe
 }); // ends validation describe
@@ -38,12 +38,12 @@ describe('Traversing a Tree', function () {
 
   });// ends methods exists describe
 
-  describe('The Method getAllNames', function () {
+  describe('Method getAllNames', function () {
     // var results = traverse.getAllNames();
     var results = ['brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'brah', 'Nikola Tesla', 'brah', 'brah', 'brah', 'brah', 'Kingtak', 'Eylem', 'Douglas Crockford', 'Jayson'];
 
     it('should return an array of strings', function () {
-      expect(results).to.be.a('array');
+      expect(results).to.be.an('array');
       expect(results).to.satisfy(containsStrings);
     });
 
@@ -56,12 +56,12 @@ describe('Traversing a Tree', function () {
     });
   }); // ends method getAllNames describe
 
-  describe('The Method getAllAges', function () {
+  describe('Method getAllAges', function () {
     // var results = traverse.getAllAges();
     var results = [1, 2, 3, 22, 5, 6, 7, 8, 9, 0, 1, 88, 3, 4, 5, 6, 7, 8, 9, 0, 500, 2, 3, 4, 5, 66, 7, 8, 9, 0, 1, 1337];
 
     it('should return an array of numbers', function () {
-      expect(results).to.be.a('array');
+      expect(results).to.be.an('array');
       expect(results).to.satisfy(containsNumbers);
     });
 
@@ -74,7 +74,7 @@ describe('Traversing a Tree', function () {
     });
   });
 
-  describe('The Method getLeafNames', function () {
+  describe('Method getLeafNames', function () {
     // var results = traverse.getLeafNames();
     var results = [
       'Spencer Toyama',
@@ -115,7 +115,7 @@ describe('Traversing a Tree', function () {
     ];
 
     it('should return an array of strings', function () {
-        expect(results).to.be.a('array');
+        expect(results).to.be.an('array');
         expect(results).to.satisfy(containsStrings);
     });
 
@@ -129,12 +129,12 @@ describe('Traversing a Tree', function () {
     
   }); //ends getLeafName describe
 
-  describe('The Method getLeafAges', function () {
+  describe('Method getLeafAges', function () {
     // var results = traverse.getLeafAges();
     var results = [28, 560, 91, 16, 783, 8008, 62, 65, 23, 43, 13, 914, 841, 33, 88, 500];
 
     it('should be an array of numbers', function () {
-      expect(results).to.be.a('array');
+      expect(results).to.be.an('array');
       expect(results).to.satisfy(containsNumbers);
     });
 
@@ -148,11 +148,12 @@ describe('Traversing a Tree', function () {
     });
   }); // ends getLeafAges describe
 
-  describe('The Method findAllParentsNames', function () {
-    var results = traverse.findAllParentsNames();
+  describe('Method findAllParentsNames', function () {
+    // var results = traverse.findAllParentsNames();
+    var results = ['stuff'];
 
     it('should be an array of strings', function () {
-      expect(results).to.be.a('array');
+      expect(results).to.be.an('array');
       expect(results).to.satisfy(containsStrings);
     });
 
@@ -169,6 +170,21 @@ describe('Traversing a Tree', function () {
       expect(results).to.include.members(someParentNames);
     });
   }); // ends findAllParentsNames describe
+
+  describe('Method findName', function () {
+    it('should find a node by it\'s name', function () {
+      var result = traverse.findName('Nikola Tesla');
+
+      expect(result).to.be.an('object');
+      expect(result).to.include.keys('name');
+      expect(result).to.include.keys('age');
+      expect(result).to.include.keys('has_parent');
+      expect(result).to.include.keys('is_leaf');
+      expect(result).to.include.keys('children');
+    });
+  }); //ends findName describe
+
+  
 
 
 }); // ends traversing describe
