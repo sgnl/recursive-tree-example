@@ -4,7 +4,6 @@ var tree = require('../tree');
 var Traverse = require('../traverse');
 
 describe('Traversing a Tree', function(){
-
   describe('Methods should exist', function(){
     var traverse = new Traverse(tree);
     var methodList = [
