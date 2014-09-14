@@ -63,7 +63,7 @@ describe('Traversing a Tree', function () {
       expect(results).to.satisfy(containsNumbers);
     });
 
-    it('should be an array of thirty-two names', function () {
+    it('should be an array of thirty-two numbers', function () {
       expect(results).to.have.length(32);
     });
 
