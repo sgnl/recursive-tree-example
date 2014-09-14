@@ -72,6 +72,38 @@ describe('Traversing a Tree', function(){
   });
 
   describe('The Method getLeafNames', function () {
+    var traverse = new Traverse(tree);
+    // var results = traverse.getLeafNames();
+    var results = [
+      'Spencer Toyama',
+      'Edgar Allan Poe',
+      'Albert Einstein',
+      'Nikola Tesla',
+      'Garfield The Cat',
+      'Milton S. Hershey',
+      'Gene Shoemaker',
+      'Neil deGrasse Tyson',
+      'Carl Sagan',
+      'Marty McFly',
+      'Bill Nye',
+      'Ann Druyan',
+      'Jon Stewart',
+      'Aaron Turner',
+      'Douglas Crockford',
+      'Victor Von Doom'
+
+    ]
+
+    it('should return an array of strings', function () {
+        expect(results).to.be.a('array');
+        expect(results).to.satisfy(containsStrings);
+    });
+    it('should be an array of sixteen names', function () {
+      expect(results).to.have.length(16);
+    });
+    it('should contains all the names!', function () {
+      expect(results)
+    });
     
   });
 
