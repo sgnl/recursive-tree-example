@@ -154,7 +154,7 @@ describe('Traversing a Tree', function () {
 
     it('should be an array of numbers', function () {
       expect(results).to.be.an('array');
-      expect(results).to.satisfy(containStrings);
+      expect(results).to.satisfy(containsNumbers);
     });
 
     it('should not include leaf ages', function () {
@@ -164,8 +164,8 @@ describe('Traversing a Tree', function () {
       expect(results).to.not.include.members(leafAges);
     });
 
-    it('should contain some of these names', function () {
-      var someParentAges = ['Bjorn', 'Kingtak', 'Michelle', 'Stevie', 'Jayson', 'Mark', 'Charles'];
+    it('should contain some of these ages', function () {
+      var someParentAges = [28, 22, 65, 302, 1337, 36, 243, 32, 24, 87, 0, 100, 817, 910, 66, 22];
 
       expect(results).to.include.members(someParentAges);
     });
