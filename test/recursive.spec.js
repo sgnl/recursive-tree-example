@@ -128,8 +128,7 @@ describe('Traversing a Tree', function () {
   }); // ends getLeafAges describe
 
   describe('Method findAllParentsNames', function () {
-    // var results = traverse.findAllParentsNames();
-    var results = ['stuff'];
+    var results = traverse.findAllParentsNames();
 
     it('should be an array of strings', function () {
       expect(results).to.be.an('array');
