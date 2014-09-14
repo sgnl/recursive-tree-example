@@ -22,8 +22,6 @@ Traverse.prototype.getAllNames = function(currentNode, resultsArray){
     }
   })(_tree);
 
-  // console.log(node.name);
-  // this.results.push(node.name);
   this.pushValue(node, 'name');
 
   if (node.has_children) {
