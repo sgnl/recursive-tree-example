@@ -34,4 +34,5 @@ This tree is in `JSON` format.
 1. fork and clone this repo
 2. does forget to `npm install`
 3. run `gulp` to keep your tasks running
-4. make each test pass in order
+4. do work inside of `traverse.js`
+5. make each test pass in order (important as some tests rely on working code)
