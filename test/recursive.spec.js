@@ -91,8 +91,7 @@ describe('Traversing a Tree', function(){
       'Aaron Turner',
       'Douglas Crockford',
       'Victor Von Doom'
-
-    ]
+    ];
 
     it('should return an array of strings', function () {
         expect(results).to.be.a('array');
@@ -105,7 +104,7 @@ describe('Traversing a Tree', function(){
       expect(results)
     });
     
-  });
+  }); //ends getLeafName describe
 
 
 }); // ends traversing describe
