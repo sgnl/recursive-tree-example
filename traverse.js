@@ -1,10 +1,14 @@
 
+/*global require, module,  __dirname */
+/*jslint node: true */
+
 'use strict';
 // var traverse = {};
 
 function Traverse(data){
   this.tree = data;
-};
+}
+
 /* 
  * build the methods via prototype
  * the first one is free
@@ -111,7 +115,7 @@ Traverse.prototype.findName = function(person, currentNode, resultsArray){
   var _tree = this.tree;
   var node = initNode(_tree, currentNode);
 
-  console.log(node.name === person);
+  // console.log(node.name === person);
 
   if (node.name === person) {
     this.foundPerson = node;
